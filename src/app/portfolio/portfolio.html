@@ -1,0 +1,60 @@
+<div class="container portfolio-container" ng-controller="portfolioCtrl as vm">
+    <h4>Portfolio</h4>
+    <ul class="nav nav-pills">
+        <li ng-click="vm.tab1click()" ng-class="vm.tab1?'active':''"><a href="javascript:;">Completed Projects</a></li>
+        <li ng-click="vm.tab2click()" ng-class="vm.tab2?'active':''"><a  href="javascript:;">On Going Projects</a></li>
+    </ul>
+    <div class="row" ng-show="vm.tab1">
+        <div class="col-sm-12 col-md-12 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-xs-6">
+                            <h4 class="text-left">Completed samples</h4>
+                        </div>
+                        <div class="col-sm-3 col-md-3">
+                            <div class="dropdown pull-right">
+                                <select class="form-control" ng-model="yearsFilter">
+                                    <option value="All" selected>All</option>
+                                    <option ng-repeat="yearsData in vm.manuYears">{{yearsData}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-xs-6">
+                            <select class="form-control" ng-model="companyFilter">
+                                <option value="All" selected>All</option>
+                                <option ng-repeat="companyData in vm.companyData">{{companyData}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body list-scroll">
+                    <port-folio-table data="vm.portfolioData" yearfilter="yearsFilter" companyfilter="companyFilter"></port-folio-table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="vm.tab2">
+        <div class="col-sm-12 col-md-12 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-xs-6">
+                            <h4 class="text-left">Ongoing samples</h4>
+                        </div>
+                        
+                        <div class="col-sm-3 col-md-3 col-md-offset-3 col-sm-offset-3 col-xs-6">
+                            <select class="form-control" ng-model="companyFilter">
+                                <option value="All" selected>All</option>
+                                <option ng-repeat="companyData in vm.companyData">{{companyData}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body list-scroll">
+                    <port-folio-table data="vm.portfolioData" yearfilter="yearsFilter" companyfilter="companyFilter"></port-folio-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

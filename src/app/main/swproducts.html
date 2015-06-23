@@ -1,0 +1,17 @@
+<div class="row">
+    <div ng-class="singleview?'col-sm-12 col-md-12':'col-sm-6 col-md-4'" ng-repeat="product in data">
+        <div class="portfolio-item">
+            <div class="portfolio-image">
+                <a href="javascript:;"><img ng-src="{{product.imgsrc}}" alt="Project Name"></a>
+            </div>
+            <div class="portfolio-info">
+                <ul>
+                    <li class="portfolio-project-name">{{product.title}}</li>
+                    <li>{{product.detail}}</li>
+                
+                    <li class="read-more"><a ng-click="vm.viewprofileClick({{product}})" class="btn">Read more</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

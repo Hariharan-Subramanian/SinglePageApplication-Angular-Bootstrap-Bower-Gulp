@@ -1,0 +1,24 @@
+<table class="table text-center">
+    <thead>
+        <tr>
+            <th class="text-center">No</th>
+            <th class="text-center">Company Name</th>
+            <th class="text-center">Description</th>
+            <th class="text-center">Quantity</th>
+            <th class="text-center">project</th>
+            <th class="text-center">Weight</th>
+            <th class="text-center">year of manufacturing</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="value in data | filter: ((yearfilter==='All'?'':yearfilter) || (companyfilter==='All'?'':companyfilter)) && ({yearofmanufacturing:yearfilter,companyname:companyfilter})">
+            <td>{{$index+1}}</td>
+            <td>{{value.companyname}}</td>
+            <td>{{value.description}}</td>
+            <td>{{value.quantity}}</td>
+            <td>{{value.project}}</td>
+            <td>{{value.weight}}</td>
+            <td>{{value.yearofmanufacturing}}</td>
+        </tr>
+    </tbody>
+</table>

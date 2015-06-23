@@ -1,0 +1,23 @@
+<div class="panel-padding">
+    <div class="panel panel-primary ">
+        <div class="panel-heading modal-header ">
+            <h4 class="modal-title pull-left">{{selectedproductdata.title}}</h4>
+            <button type="button" class="close pull-right" ng-click="timecardHelpModalClose()" data-dismiss="modal">&times;</button>
+            <div class="clearfix"></div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12 col-md-12  ">
+                    <div class="text-center product-image">
+                        <img ng-src="{{selectedproductdata.imgsrc}}" alt="info">
+                    </div>
+                    <div class="divider-horizontal"></div>
+                    <p>{{selectedproductdata.detail}}</p>
+                    <div class="top-space-20"></div>
+                    <p>{{selectedproductdata.detail}}</p>
+                </div>
+            </div>
+            <h5><button type="button" class="btn btn-primary" ng-click="timecardHelpModalClose()">Close</button></h5>
+        </div>
+    </div>
+</div>
